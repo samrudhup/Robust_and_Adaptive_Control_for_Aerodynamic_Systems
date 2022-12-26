@@ -1,15 +1,15 @@
 # Robust_and_Adaptive_Control_for_Aerodynamic_Systems
 
-Problem 7.1
+Direct Model Reference Adaptive Control for MIMO Systems
 
-Given the roll damping L_p = -0.8(s-1) and the aileron effectiveness L_delta_a = 1.6 (s-1), 
-design a fixed-gain model reference controller in the form of delta_a = ((a_ref - L_p)/L_dela)*p + (b_ref/L_dela)*p_cmd to recover the reference model dynamics p_ref = a_ref * p + b_ref * p_cmd,
-with a_ref =-2,b_ref = 2.
+Problem 9.2
 
-Also,designed a fixed-gain controller with error feedback in the form of delta_a = kp*p + k_pcmd * p_cmd - ke * (p - p_ref). 
+Proved that if some of teh diagonal elements lambda_i of the unknown diagonal matrix Lambda_ in the system dynamics, then the adaptive laws
 
-Choose several bounded time-varying roll rate commands. Simulated the closed-loop system response, with each of the two controllers active (one at a time). 
+K_hat_dot_x = -Gamma_x * x * e' * P * B * sgn(Lambda)
+K_hat_dot_r = -Gamma_r * r * e' * P * B * sgn(Lambda)
+Theta_hat_dot = Gamma_Theta * Phi * e' * P * B * sgn(Lambda) 
 
-Compared the two controllers and the achieved closed-loop system stability, robustness, tracking, and transient properties.
+solves the MIMO tracking problem. 
 
-
+Implemented and simulated the system to test the MRAC controller in the presence of varios uncertianties and external commands of choice.
